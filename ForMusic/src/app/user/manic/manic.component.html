@@ -1,0 +1,43 @@
+<div>
+<div class="alb">
+  <img src="assets/image/Halsey.jpg" style="width: 200px; height: 200px;">
+  <h4 style="margin-left: 110px">Manic</h4>
+  <h5 style="margin-left: 110px; color: gray">Halsey</h5>
+  <h5 style="color: gray">"My personal life is a disaster," Halsey <br>
+    tells Zane Lowe in an interview with Apple Music,<br>
+    reflecting on the consequences of his meteoric <br>
+    rise from indie outsider to pop superstar. Many<br>
+    of the songs from "Manic", the third and very <br>
+    emotional Studio album of the 25-year-old artist,<br>
+    were as if written from the epicenter of the storm.<br>
+    "I'm impulsive, spontaneous, driven more by emotion<br>
+    than logic, I can rush around thinking, "What if<br>
+    this song sounded like the Beach Boys? What<br>
+    if six songs don't have drums?“». </h5>
+</div>
+  <div class="alb">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="width: 500px; margin-left: 25px">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="taskName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Music </th>
+      <td mat-cell *matCellDef="let element"> {{element.taskName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Min </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+</div>
+<label>
+  <button class="button" (click)="back()"> Back</button>
+</label>

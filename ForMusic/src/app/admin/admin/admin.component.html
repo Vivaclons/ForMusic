@@ -1,0 +1,147 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse" style="display: flex; position: absolute; width: 1350px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="main">ForMusic</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="main">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a href="user">Premium</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="main"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<br><br>
+
+<div class="i">
+  <img src="assets/image/stanley-dai-73OZYNjVoNI-unsplash.jpg" style="width:1350px; height: 600px; z-index: 1">
+  <h1>Welcome to Admin page</h1>
+  <h3>You are the king here.</h3>
+  <div>
+    <a href="https://www.instagram.com/spotify/" style="font-size:40px">
+      <i id="ss" class="fa fa-instagram"></i>
+    </a>
+    <a href="https://www.twitter.com/spotify/" style="font-size:40px">
+      <i id="ss1" class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/Spotify" style="font-size:40px">
+      <i id="ss2" class="fa fa-facebook"></i>
+    </a>
+  </div>
+</div>
+
+  <h1 style="text-align: center">I`m KING)</h1>
+  <h3 style="text-align: center">USERS</h3>
+<div>
+  <h1 style="text-align: center">All Music</h1>
+  <button (click)="create()">Create</button>
+  <div style="margin-left: 75px">
+    <div class="search">
+      <form [formGroup]="formName">
+        <h3>Search by Music name: </h3>
+        <input type="text" formControlName="name" name="name" (change)="setFilterName()"> &nbsp;&nbsp;&nbsp;
+      </form>
+    </div>
+    <div class="search">
+      <form [formGroup]="formAuth">
+        <h3>Search by Author: </h3>
+        <input type="text" formControlName="createDate" name="createDate" (change)="setFilterAuthor()">
+      </form>
+    </div>
+    <table mat-table [dataSource]="dataTask" class="mat-elevation-z8" width="1200px">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <th mat-cell *matCellDef="let element"> {{element.id}} </th>
+      </ng-container>
+
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Music name </th>
+        <th mat-cell *matCellDef="let element"> {{element.name}} </th>
+      </ng-container>
+
+
+      <ng-container matColumnDef="createDate">
+        <th mat-header-cell *matHeaderCellDef> Author </th>
+        <th mat-cell *matCellDef="let element"> {{element.createDate}} </th>
+      </ng-container>
+
+      <ng-container matColumnDef="importance">
+        <th mat-header-cell *matHeaderCellDef> Year of publisher </th>
+        <th mat-cell *matCellDef="let element">{{element.importance}}</th>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Min </th>
+        <th mat-cell *matCellDef="let element">{{element.status}}</th>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <th mat-cell *matCellDef="let element">
+          <button (click)="update(element)">Update</button>
+          <button (click)="delete(element.id)">Delete</button>
+        </th>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="limit" (page)="changeTableList($event)" [pageSizeOptions]="[3, 5, 7, 10]"> </mat-paginator>
+  </div>
+</div>
+
+<br>
+<br>
+<footer class="footer">
+  <a href="main" style="color: gray; text-decoration: none">
+    <h3>ForMusic</h3>
+  </a>
+  <div class="foo">
+    <h5>COMPANY</h5>
+    <h5 class="h5">About</h5>
+    <h5 class="h5">Jobs</h5>
+    <h5 class="h5">Music for everyone</h5>
+    <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>COMMUNITIES</h5>
+    <h5 class="h5">For Artists</h5>
+    <h5 class="h5">Developers</h5>
+    <h5 class="h5">Brands</h5>
+    <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>USEFUL LINKS</h5>
+    <h5 class="h5">Help</h5>
+    <h5 class="h5">Web Player</h5>
+    <h5 class="h5">Free Mobile App</h5>
+    <br><br><br>
+  </div>
+
+  <div class="c">
+    <h5>© 2020 ForMusic</h5>
+  </div>
+</footer>
+</body>

@@ -1,0 +1,26 @@
+.alb{
+  display: inline-block;
+  position: center;
+  margin-left: 60px;
+}
+
+.alb img{
+  margin-left: 25px;
+  border: 1px aqua solid;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 900px;
+}

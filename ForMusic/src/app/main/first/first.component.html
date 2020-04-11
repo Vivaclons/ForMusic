@@ -1,0 +1,112 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse" style="display: flex; position: absolute; width: 1350px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="main">ForMusic</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="main">Home</a></li>
+      <li><a href="user">Premium</a></li>
+      <li><a (click)="login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+    <li><a (click)="signup()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<br><br>
+<div class="i"><!--to select a document fragment-->
+  <img src="assets/image/For.jpg" width="1350" height="600" z-index="1"> <!--imagine location and width, height-->
+  <h1>ForMusic is currently not available in your country</h1>
+  <h3>Follow us online to find out when we launch.</h3>
+  <div>
+    <a href="https://www.instagram.com/spotify/" style="font-size:40px"> <!-- link to go --->
+      <i id="ss" class="fa fa-instagram" style="font-size:50px"></i> <!-- icon parameters --->
+    </a>
+    <a href="https://twitter.com/spotify"><!-- link to go --->
+      <i id="ss1" class="fa fa-twitter" style="font-size:40px"></i><!-- icon parameters --->
+    </a>
+    <a href="https://www.facebook.com/Spotify"><!-- link to go --->
+      <i id="ss2" class="fa fa-facebook" style="font-size:40px"></i><!-- icon parameters --->
+    </a>
+  </div>
+</div>
+<br>
+<h1 id="h1">ForMusic gives you instant access to millions of songs – from<br>
+  old favorites to the latest hits. Just hit play to stream anything<br>you like.</h1>
+<br><br>
+
+<div>
+  <div class="ima">
+    <img src="/assets/image/img1.jpg" width="250">
+
+    <h4>Listen everywhere</h4>
+    <p>ForMusic works on your computer,<br> mobile, tablet and TV.</p>
+  </div>
+  <div class="ima">
+    <img src="/assets/image/img2.jpg" width="250">
+    <h4>Unlimited, ad-free music</h4>
+    <p>No ads. No interruptions.<br> Just music.</p>
+  </div>
+  <div class="ima">
+    <img src="/assets/image/img3.jpg" width="250">
+    <h4>Download music & listen offline</h4>
+    <p>Keep playing, even when <br> you don't have a connection.</p>
+  </div>
+  <div class="ima">
+    <img src="/assets/image/img4.jpg" width="250">
+    <h4>Premium sounds better</h4>
+    <p>Get ready for incredible sound <br> quality.</p>
+  </div>
+</div>
+
+<br>
+
+<footer class="footer">
+  <a href="main" style="color: gray; text-decoration: none">
+    <h3>ForMusic</h3>
+  </a>
+  <div class="foo">
+    <h5>COMPANY</h5>
+        <h5 class="h5">About</h5>
+      <h5 class="h5">Jobs</h5>
+        <h5 class="h5">Music for everyone</h5>
+      <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>COMMUNITIES</h5>
+    <h5 class="h5">For Artists</h5>
+    <h5 class="h5">Developers</h5>
+    <h5 class="h5">Brands</h5>
+    <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>USEFUL LINKS</h5>
+      <h5 class="h5">Help</h5>
+    <h5 class="h5">Web Player</h5>
+    <h5 class="h5">Free Mobile App</h5>
+    <br><br><br>
+  </div>
+
+  <div class="c">
+    <a (click)="admin()" style="color: gray"><span class="glyphicon glyphicon-log-in"></span> Admin</a>
+    <h5>© 2020 ForMusic</h5>
+  </div>
+</footer>
+
+</body>

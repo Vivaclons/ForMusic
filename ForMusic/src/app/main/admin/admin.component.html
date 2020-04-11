@@ -1,0 +1,10 @@
+<h2 style="text-align: center">Login</h2>
+<form [formGroup]="formG" style="margin-left: 140px">
+  <label for="username">Admin Name:</label><br>
+  <input id="username" name="userName" formControlName="userName"><br><br>
+
+  <label for="password">Password:</label><br>
+  <input id="password" name="passWord" formControlName="passWord"><br><br>
+
+  <button class="btn btn-success" (click)="login()" style="margin-left: 200px">login</button>
+</form>

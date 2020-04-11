@@ -1,0 +1,44 @@
+<div>
+  <div class="alb">
+    <img src="assets/image/TCh.jpg" style="width: 200px; height: 200px;">
+    <h4 style="margin-left: 45px">Memories...Do Not Open</h4>
+    <h5 style="margin-left: 75px; color: gray">The Chainsmokers</h5>
+    <h5 style="color: gray">"This is the sound of world domination in 2017.<br>
+      Andrew Target and Alex Pall`s debut album <br>
+      comes after quite the storied introduction<br>
+      to their sound: two monster EPs and a summer-<br>
+      owning single ("Closer") they were confident<br>
+      enough to leave off here. Memories... takes<br>
+      the band`s dynamite blueprint (retro synths<br>
+      and minor-key piano that softens up their<br>
+      explosive EDM) and adds some maturity. Opener<br>
+      "The One" feels like "Closer"`s broken-hearted<br>
+      sequal; Emily Warren`s two stately contributions<br>
+      add class."</h5>
+  </div>
+  <div class="alb">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="width: 500px; margin-left: 25px">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="taskName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Music </th>
+        <td mat-cell *matCellDef="let element"> {{element.taskName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Min </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+<label>
+  <button class="button" (click)="back()"> Back</button>
+</label>

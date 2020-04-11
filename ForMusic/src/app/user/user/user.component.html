@@ -1,0 +1,316 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-inverse" style="display: flex; position: absolute; width: 1350px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="main">ForMusic</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="main">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="user">Premium</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="main"><span class="glyphicon glyphicon-log-in" (click)="logout()"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<br><br>
+
+<div class="i">
+  <img src="/assets/image/Premium.jpg" style="width:1350px; height: 600px; z-index: 1">
+  <h1>Music for everyone</h1>
+  <h3>Millions of songs. No credit card needed.</h3>
+  <div>
+    <a href="https://www.instagram.com/spotify/" style="font-size:40px">
+      <i id="ss" class="fa fa-instagram"></i>
+    </a>
+    <a href="https://www.twitter.com/spotify/" style="font-size:40px">
+      <i id="ss1" class="fa fa-twitter"></i>
+    </a>
+    <a href="https://www.facebook.com/Spotify" style="font-size:40px">
+      <i id="ss2" class="fa fa-facebook"></i>
+    </a>
+  </div>
+</div>
+
+<br>
+<h1 style="text-align: center; font-size:48px">Manager subscription</h1>
+<br>
+
+<div class="subs">
+<div class="subs1">
+  <h1>Individual</h1>
+  <h5>1-account</h5>
+  <h5>$9.99/month after offer period(1-Month).</h5>
+  <h5 style="color: red">*3 mouth free</h5>
+  <hr>
+  <ul>
+    <li>
+      <h4>Listen to music ad-free.</h4>
+    </li>
+    <li>
+      <h4>Play anywhere - even offline.</h4>
+    </li>
+    <li>
+      <h4>On-demand playback.</h4>
+    </li>
+    <li>
+      <h4>Only you;)</h4>
+    </li>
+  </ul>
+  <br>
+  <label>
+    <button class="button"> Get started</button>
+  </label>
+</div>
+  <div class="subs1">
+    <h1>Family</h1>
+    <h5>Up to 6 accounts</h5>
+    <h5>$14.99/month after offer period(1-Month).</h5>
+    <h5 style="color: red">*3 mouth free</h5>
+    <hr>
+    <ul>
+    <li>
+      <h4>6 Premium accounts for family.</h4>
+    </li>
+      <li>
+        <h4>Block explicit music.</h4>
+      </li>
+      <li>
+        <h4>Ad-free music listening, play.</h4>
+      </li>
+      <li>
+        <h4>Family Mix: a playlist for your family.</h4>
+      </li>
+    </ul>
+    <br>
+    <label>
+      <button class="button"> Get started</button>
+    </label>
+  </div>
+  <div class="subs1">
+    <h1>Student</h1>
+    <h5>1-account</h5>
+    <h5>$4.99/month after offer period(1-Month).</h5>
+    <h5 style="color: red">*3 mouth free</h5>
+    <hr>
+    <ul>
+    <li>
+      <h4>Hulu (ad-supported) plan.</h4>
+    </li>
+      <li>
+        <h4>SHOWTIME.</h4>
+      </li>
+      <li>
+        <h4>Listen to music ad-free.</h4>
+      </li>
+      <li>
+        <h4>Play anywhere - even offline.</h4>
+      </li>
+    </ul>
+    <br>
+    <label>
+      <button class="button"> Get started</button>
+    </label>
+</div>
+</div>
+
+<br><br>
+
+<h1 style="text-align: center; font-size: 48px">Not Miss</h1>
+
+<br>
+
+<div>
+  <h2 style="margin-left: 20px">Now in ForMusic</h2>
+  <br>
+  <a>
+    <div class="now">
+      <img src="assets/image/Fire.jpg" style="width: 300px; height: 200px">
+      <h3>New Fire</h3>
+      <h4>ForMusic</h4>
+      <audio controls>
+      <source src="assets/music/Blackbear - Idfc.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </a>
+  <a>
+    <div class="now">
+      <img src="assets/image/simon-noh-0rmby-3OTeI-unsplash.jpg" style="width: 300px; height: 200px" (click)="adminLog()">
+      <h3>No Music, No Life</h3>
+      <h4>ForMusic</h4>
+      <audio controls>
+        <source src="assets/music/The Neighbourhood - Too Serious.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </a>
+  <a>
+  <div class="now">
+    <img src="assets/image/music.jpg  " style="width: 300px; height: 200px" (click)="adminLog()">
+    <h3>A-List-Pop</h3>
+    <h4>ForMusic</h4>
+    <audio controls>
+      <source src="assets/music/Halsey - Graveyard.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  </a>
+  <a href="main">
+    <div class="now">
+      <img src="assets/image/G-eazy.jpg" style="width: 300px; height: 200px" (click)="adminLog()">
+      <h3>Rap Life</h3>
+      <h4>ForMusic</h4>
+      <audio controls>
+        <source src="assets/music/G-Eazy - The Plan.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </a>
+</div>
+
+<br><br>
+
+<div>
+  <h2 style="margin-left: 20px">A selection of playlists</h2>
+  <br>
+  <a>
+    <div class="alb">
+      <img src="assets/image/Dua.jpeg" style="width: 200px; height: 200px" (click)="future()">
+      <h4>Future Nostalgia</h4>
+      <h5>Dua Lipa</h5>
+    </div>
+  </a>
+  <a>
+    <div class="alb">
+      <img src="assets/image/G-eazy.jpg" style="width: 200px; height: 200px" (click)="scary()">
+      <h4>Scary Nights</h4>
+      <h5>G-Eazy</h5>
+    </div>
+  </a>
+  <a>
+    <div class="alb">
+      <img src="assets/image/Halsey.jpg" style="width: 200px; height: 200px" (click)="manic()">
+      <h4>Manic</h4>
+      <h5>Halsey</h5>
+    </div>
+  </a>
+  <a>
+    <div class="alb">
+      <img src="assets/image/TCh.jpg" style="width: 200px; height: 200px" (click)="memories()">
+      <h4>Memories...Do Not Open</h4>
+      <h5>The Chainsmokers</h5>
+    </div>
+  </a>
+  <a>
+  <div class="alb">
+    <img src="assets/image/TNBH.jpeg" style="width: 200px; height: 200px" (click)="love()">
+    <h4>I Love You</h4>
+    <h5>The Neighbourhood</h5>
+  </div>
+</a>
+</div>
+
+<br><br>
+
+<div>
+  <h1 style="text-align: center">All Music</h1>
+<div style="margin-left: 75px">
+  <div class="search">
+    <form id="f1" [formGroup]="formName">
+      <h3>Search by Music name: </h3>
+      <input type="text" formControlName="name" name="name" (change)="setFilterName()"> &nbsp;&nbsp;&nbsp;
+    </form>
+  </div>
+  <div class="search">
+    <form [formGroup]="formAuth">
+      <h3>Search by Author: </h3>
+      <input type="text" formControlName="createDate" name="createDate" (change)="setFilterAuthor()">
+    </form>
+  </div>
+    <table mat-table [dataSource]="dataTask" class="mat-elevation-z8" width="1200px">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <th mat-cell *matCellDef="let element"> {{element.id}} </th>
+      </ng-container>
+
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Music name </th>
+        <th mat-cell *matCellDef="let element"> {{element.name}} </th>
+      </ng-container>
+
+
+      <ng-container matColumnDef="createDate">
+        <th mat-header-cell *matHeaderCellDef> Author </th>
+        <th mat-cell *matCellDef="let element"> {{element.createDate}} </th>
+      </ng-container>
+
+      <ng-container matColumnDef="importance">
+        <th mat-header-cell *matHeaderCellDef> Year of publisher </th>
+        <th mat-cell *matCellDef="let element">{{element.importance}}</th>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Min </th>
+        <th mat-cell *matCellDef="let element">{{element.status}}</th>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="limit" (page)="changeTableList($event)" [pageSizeOptions]="[3, 5, 7, 10]"> </mat-paginator>
+  </div>
+</div>
+
+<br><br>
+
+<footer class="footer">
+  <a href="main" style="color: gray; text-decoration: none">
+    <h3>ForMusic</h3>
+  </a>
+  <div class="foo">
+    <h5>COMPANY</h5>
+    <h5 class="h5">About</h5>
+    <h5 class="h5">Jobs</h5>
+    <h5 class="h5">Music for everyone</h5>
+    <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>COMMUNITIES</h5>
+    <h5 class="h5">For Artists</h5>
+    <h5 class="h5">Developers</h5>
+    <h5 class="h5">Brands</h5>
+    <br><br><br>
+  </div>
+
+  <div class="foo">
+    <h5>USEFUL LINKS</h5>
+    <h5 class="h5">Help</h5>
+    <h5 class="h5">Web Player</h5>
+    <h5 class="h5">Free Mobile App</h5>
+    <br><br><br>
+  </div>
+
+  <div class="c">
+    <a href="admin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Admin</a>
+    <a href="supadmin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a>
+    <h5>© 2020 ForMusic</h5>
+  </div>
+</footer>
+</body>

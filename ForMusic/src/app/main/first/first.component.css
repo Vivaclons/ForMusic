@@ -1,0 +1,85 @@
+#h1{
+  color: black;
+  text-align: center;
+}
+
+.ima{
+  display: inline-block;
+  position: static; /* Static positioning */
+  margin-left: 5.25%;
+}
+
+.ima h4{
+  text-align: center;/* the location of the text */
+}
+
+.ima p{
+  text-align: center;/* the location of the text */
+}
+
+.i h1{
+  font-size: 45px; /* Specifies the font size of the element */
+  position: absolute;
+  color: white;/* text color */
+  top: 320px; /* Position from the top edge */
+  margin-left: 190px;
+}
+
+.i h3{
+  font-size: 30px; /* Specifies the font size of the element */
+  position: absolute; /* Absolute positioning */
+  color: white;/* text color */
+  top: 370px;
+  margin-left: 400px;
+}
+
+#ss{
+  position: absolute; /* Absolute positioning */
+  color: white;/* text color */
+  top: 500px; /* Position from the top edge */
+  margin-left: 580px;
+}
+
+#ss1{
+  position: absolute; /* Absolute positioning */
+  color: white;/* text color */
+  top: 500px; /* Position from the top edge */
+  margin-left: 640px;
+
+}
+
+#ss2{
+  display: block;
+  position: absolute; /* Absolute positioning */
+  color: white;/* text color */
+  top: 500px; /* Position from the top edge */
+  margin-left: 700px;
+}
+
+.footer{
+  position: static;
+  background-color: #191818;/* background color */
+  color: white;
+  padding: 1.2%;
+}
+
+.footer h2{
+  margin-left: 80px;
+  color: white;
+}
+
+.footer img{
+  padding: inherth; /* Sets the value of the fields around the element content */
+}
+
+.foo{
+  display: inline-block;
+  color: grey;
+  margin-left: 230px;
+}
+
+.c{
+  display: inline-block;
+  color: grey;
+  margin-left: 1200px;
+}

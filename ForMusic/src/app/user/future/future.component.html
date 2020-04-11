@@ -1,0 +1,43 @@
+<div>
+  <div class="alb">
+    <img src="assets/image/Dua.jpeg" style="width: 200px; height: 200px;">
+    <h4 style="margin-left: 70px">Future Nostalgia</h4>
+    <h5 style="margin-left: 100px; color: gray">Dua Lipa</h5>
+    <h5 style="color: gray">"They often talk about how scary it is to create<br>
+      a second album, " Dua Lipa says in an interview<br>
+      with Apple Music. — But it would be scary for<br>
+      me to go back to the Studio and try to record<br>
+      something like "New Rules"again. It would be <br>
+      a vicious circle: I would not move anywhere and<br>
+      would not develop as an artist." In search of new<br>
+      ideas and striving to break the records of her hit<br>
+      debut album in 2017, the singer decided to turn <br>
+      to the past. "On the new album. I travel a lot in<br>
+      time" — this is how Dua Lipa explains the concept</h5>
+  </div>
+  <div class="alb">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="width: 500px; margin-left: 25px">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="taskName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Music </th>
+        <td mat-cell *matCellDef="let element"> {{element.taskName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Min </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+<label>
+  <button class="button" (click)="back()"> Back</button>
+</label>

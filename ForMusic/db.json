@@ -1,0 +1,163 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "Name": "Shyngys",
+      "Surname": "Yerkyn",
+      "userName": "user1",
+      "password": "pass2",
+      "roleID": "3"
+    },
+    {
+      "id": 2,
+      "Name": "User",
+      "Surname": "Userov",
+      "userName": "user2",
+      "password": "pass2",
+      "roleID": "2"
+    },
+    {
+      "id": 3
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "adminName": "admin",
+      "password": "pass"
+    },
+    {
+      "id": 2,
+      "adminName": "admin1",
+      "password": "pass1"
+    },
+    {
+      "id": 3,
+      "adminName": "admin2",
+      "password": "pass3"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "nameRole": "Family"
+    },
+    {
+      "id": 2,
+      "nameRole": "Individual"
+    },
+    {
+      "id": 3,
+      "nameRole": "Student"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "929",
+      "createDate": "Halsey",
+      "importance": 2019,
+      "status": "2:54"
+    },
+    {
+      "name": "Thunder ",
+      "createDate": "Imagine Dragons",
+      "importance": "2018",
+      "status": "3:14",
+      "id": 5
+    },
+    {
+      "id": 7,
+      "name": "Bat at Love",
+      "createDate": "Halsey",
+      "importance": "2018",
+      "status": "2:46"
+    },
+    {
+      "name": "Graveyard",
+      "createDate": "Halsey",
+      "importance": "2020",
+      "status": "3:14",
+      "id": 9
+    },
+    {
+      "name": "Legend",
+      "createDate": "Drake",
+      "importance": "2012",
+      "status": "4:01",
+      "id": 10
+    }
+  ],
+  "music": [
+    {
+      "id": 1,
+      "musicName": "929",
+      "author": "Halsey",
+      "rDate": 2020,
+      "min": "2:54"
+    },
+    {
+      "id": 2,
+      "musicName": "LALALA",
+      "author": "Darrem",
+      "rDate": 2019,
+      "min": "2:49"
+    },
+    {
+      "id": 3,
+      "musicName": "DELETE",
+      "author": "M`Dee",
+      "rDate": 2020,
+      "min": "2:55"
+    },
+    {
+      "id": 4,
+      "musicName": "Nervous",
+      "author": "The Neighbourhood",
+      "rDate": 2018,
+      "min": "4:05"
+    },
+    {
+      "id": 5,
+      "musicName": "Him & I",
+      "author": "G-Eazy & Halsey",
+      "rDate": 2017,
+      "min": "4:29"
+    },
+    {
+      "id": 6,
+      "musicName": "3am",
+      "author": "Halsey",
+      "rDate": 2020,
+      "min": "3:54"
+    },
+    {
+      "id": 7,
+      "musicName": "Thunder",
+      "author": "Imagine Dragons",
+      "rDate": 2018,
+      "min": "3:07"
+    },
+    {
+      "id": 8,
+      "musicName": "Believer",
+      "author": "Imagine Dragons",
+      "rDate": 2018,
+      "min": "3:24"
+    },
+    {
+      "id": 9,
+      "musicName": "Bellyache",
+      "author": "Billie Eilish",
+      "rDate": 2017,
+      "min": "2:59"
+    },
+    {
+      "id": 10,
+      "musicName": "Sick boy",
+      "author": "The Chainsmokers",
+      "rDate": 2018,
+      "min": "3:13"
+    }
+  ]
+}

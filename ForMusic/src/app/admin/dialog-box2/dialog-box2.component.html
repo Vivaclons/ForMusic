@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+  <label for="name">Music:</label>
+  <input type="text" id="name" name="name" formControlName="name">
+  <br>
+
+  <label for="importance">Year of publisher:</label>
+  <input type="text" id="importance" name="importance" formControlName="importance">
+  <br>
+
+  <label for="createDate">Author:</label>
+  <input type="text" id="createDate" name="createDate" formControlName="createDate">
+  <br>
+
+  <label for="status">Min:</label>
+  <input type="text" id="status" name="status" formControlName="status">
+  <br>
+
+  <br>
+  <button *ngIf="new" (click)="create()">create</button>
+  <button *ngIf="!new" (click)="update()">update</button>
+</form>

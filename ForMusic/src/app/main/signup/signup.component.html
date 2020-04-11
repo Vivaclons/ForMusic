@@ -1,0 +1,22 @@
+<h2 style="text-align: center">Sign up</h2>
+<form [formGroup]="form" style="margin-left: 110px">
+
+  <label for="Name">Name: </label><br>
+  <input id="Name" name="Name" formControlName="Name"><br><br>
+
+  <label for="Surname">Surname: </label><br>
+  <input id="Surname" name="Surname" formControlName="Surname"><br><br>
+
+  <label for="username">Username: </label><br>
+  <input id="username" name="userName" formControlName="userName"><br><br>
+
+  <label for="password">Password: </label><br>
+  <input id="password" name="password" formControlName="password"><br><br>
+
+  <label for="roleID">Roles: </label><br>
+  <select id="roleID" name="roleID" formControlName="roleID" style="width: 100px">
+    <option *ngFor="let i of subs" [value]="i.id">{{i.nameRole}}</option>
+  </select>
+  <br><br>
+  <button class="btn btn-success" *ngIf="new" (click)="create()" style="margin-left: 200px">create</button>
+</form>
