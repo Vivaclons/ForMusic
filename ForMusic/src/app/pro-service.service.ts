@@ -10,6 +10,10 @@ export class ProServiceService {
   constructor(private http: HttpClient) {
   }
 
+  getAllUsers1(page: string): Observable<any> {
+    return this.http.get('http://localhost:3000/users?' + page + '&_sort=name&_order=desc');
+  }
+
   getAllUsers(): Observable<any> {
     return this.http.get('http://localhost:3000/users');
   }
@@ -29,17 +33,10 @@ export class ProServiceService {
     return this.http.get('http://localhost:3000/roles');
   }
 
-  // getAllProduct(): Observable<any> {
-  //   return this.http.get('http://localhost:3000/products');
-  // }
-  //
-  // deleteProd(id): Observable<any> {
-  //   return this.http.delete('http://localhost:3000/product/' + id);
-  // }
-  //
-  // createProduct(product: any): Observable<any> {
-  //   return this.http.post('http://localhost:3000/products', product);
-  // }
+  getAllAdmin(): Observable<any> {
+    return this.http.get('http://localhost:3000/admin');
+  }
+
   getAllTasks(page: string): Observable<any> {
     return this.http.get('http://localhost:3000/tasks?' + page + '&_sort=name&_order=desc');
   }
@@ -54,5 +51,9 @@ export class ProServiceService {
 
   deleteTask(id) {
     return this.http.delete('http://localhost:3000/tasks/' + id);
+  }
+
+  getAllRoles(): Observable<any> {
+    return this.http.get('http://localhost:3000/roles');
   }
 }

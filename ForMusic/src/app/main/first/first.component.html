@@ -104,7 +104,9 @@
   </div>
 
   <div class="c">
-    <a (click)="admin()" style="color: gray"><span class="glyphicon glyphicon-log-in"></span> Admin</a>
+    <a href="admin" style="color: gray"><span class="glyphicon glyphicon-log-in"></span> Admin</a><br>
+    <a href="supadmin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a><br>
+    <a (click)="adminLog()" style="color: gray">If you Admin...</a>
     <h5>© 2020 ForMusic</h5>
   </div>
 </footer>

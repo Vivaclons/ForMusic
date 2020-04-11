@@ -3,8 +3,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 import {ProServiceService} from '../../pro-service.service';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogBox2Component} from '../../admin/dialog-box2/dialog-box2.component';
 import {DialogboxComponent} from '../dialogbox/dialogbox.component';
+import {AuthService2Service} from '../../auth-service2.service';
 
 @Component({
   selector: 'app-sadmin',
@@ -12,76 +12,86 @@ import {DialogboxComponent} from '../dialogbox/dialogbox.component';
   styleUrls: ['./sadmin.component.css']
 })
 export class SadminComponent implements OnInit {
-
+  dataTask = new MatTableDataSource();
+  displayedColumns: st
+  ring[] = ['id', 'Name', 'Surname', 'userName', 'password', 'nameRole', 'action'];
   filterAuth = '';
   filterName = '';
-
   formAuth: FormGroup;
   formName: FormGroup;
+  roles = '';
   limit = 3;
   page = 0;
 
-  dataTask = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'name', 'createDate', 'importance', 'status', 'action'];
-
-  constructor(private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
-      createDate: ['']
+      userName: ['']
     });
 
     this.formName = this.formI.group({
-      name: []
+      Name: ['']
     });
-
-    // this.formName = this.formN.group({
-    //   name: ['']
-    // });
   }
 
   ngOnInit(): void {
-    this.getTask();
+    this.getUser();
+    this.getRoles();
   }
 
   setFilterAndSort() {
     let str = '_page=' + this.page + '&_limit=' + this.limit;
     if (this.filterAuth !== '' && this.filterAuth !== null && this.filterAuth !== 'none') {
-      str += '&createDate=' + this.filterAuth;
+      str += '&userName=' + this.filterAuth;
     }
     if (this.filterName !== '' && this.filterName !== null) {
-      str += '&name=' + this.filterName;
+      str += '&Name=' + this.filterName;
     }
     return str;
   }
 
-  setFilterAuthor() {
-    this.filterAuth = this.formAuth.getRawValue().createDate;
-    this.service.getAllTasks(this.setFilterAndSort()).subscribe( res => {
+  setFilterUsername() {
+    this.filterAuth = this.formAuth.getRawValue().userName;
+    this.service.getAllUsers1(this.setFilterAndSort()).subscribe( res => {
       this.dataTask = res;
     });
   }
 
   setFilterName() {
-    this.filterName = this.formName.getRawValue().name;
-    this.service.getAllTasks(this.setFilterAndSort()).subscribe( res => {
+    this.filterName = this.formName.getRawValue().Name;
+    this.service.getAllUsers1(this.setFilterAndSort()).subscribe( res => {
       this.dataTask = res;
     });
   }
   changeTableList(event) {
     this.limit = event.pageSize;
-    this.service.getAllTasks(this.setFilterAndSort()).subscribe(res => {
+    this.service.getAllUsers1(this.setFilterAndSort()).subscribe(res => {
       this.dataTask = res;
     });
   }
 
-  getTask() {
-    this.service.getAllTasks(this.setFilterAndSort()).subscribe(res => {
+  getUser() {
+    this.service.getAllUsers1(this.setFilterAndSort()).subscribe(res => {
       this.dataTask = res;
     });
+  }
+
+  getRoles() {
+    this.service.getAllRoles().subscribe(res => {
+      this.roles = res;
+    });
+  }
+
+  findRole(id: number) {
+    for (let i = 0; i < this.roles.length; i++) {
+      if (this.roles[i].id == id) {
+        return this.roles[i].nameRole;
+      }
+    }
   }
 
   delete(id) {
-    this.service.deleteTask(id).subscribe(res => {
-      this.getTask();
+    this.service.deleteUser(id).subscribe(res => {
+      this.getUser();
     }, error => {
       console.error(error);
     });
@@ -93,20 +103,21 @@ export class SadminComponent implements OnInit {
       width: '450px',
       data: task
     }).afterClosed().subscribe(res => {
-      this.service.updateTask(res).subscribe(result =>
-        this.getTask());
+      this.service.updateUser(res).subscribe(result =>
+        this.getUser());
     });
   }
 
-  // create
   create() {
     this.dialog.open(DialogboxComponent, {
       width: '450px',
     }).afterClosed().subscribe( res => {
-      this.service.createTask(res).subscribe( result => {
-        this.getTask();
+      this.service.createUser(res).subscribe( result => {
+        this.getUser();
       });
     });
   }
-
+  logout() {
+    this.auth.logout();
+  }
 }

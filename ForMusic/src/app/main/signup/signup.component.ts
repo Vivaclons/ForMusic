@@ -9,25 +9,24 @@ import {ProServiceService} from '../../pro-service.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
   new = false;
-  form: FormGroup;
-  subs = [];
+  formG: FormGroup;
+  roles = [];
   constructor(private dialog: MatDialogRef<SignupComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder, private service: ProServiceService) {
 
     if (data) {
       this.new = false;
-      this.form = this.formBuilder.group({
+      this.formG = this.formBuilder.group({
         id: [data.id, Validators.required],
         Name: [data.Name, Validators.required],
         Surname: [data.Surname, Validators.required],
         userName: [data.userName, Validators.required],
         password: [data.password, Validators.required],
-        roleID: [parseInt(data.subsId, 10), Validators.required]
+        roleID: [parseInt(data.roleID, 10), Validators.required]
       });
     } else {
-      this.form = this.formBuilder.group({
+      this.formG = this.formBuilder.group({
         Name: ['', Validators.required],
         Surname: ['', Validators.required],
         userName: ['', Validators.required],
@@ -39,12 +38,15 @@ export class SignupComponent implements OnInit {
   }
 
   create() {
-    this.dialog.close(this.form.getRawValue());
+    this.dialog.close(this.formG.getRawValue());
   }
 
+  update() {
+    this.dialog.close(this.formG.getRawValue());
+  }
   getRoles() {
-    this.service.getAllSubs().subscribe(res => {
-      this.subs = res;
+    this.service.getAllRoles().subscribe(res => {
+      this.roles = res;
     });
   }
 

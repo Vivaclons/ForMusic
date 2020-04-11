@@ -23,7 +23,7 @@
       <li><a href="user">Premium</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="main"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="main" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -31,9 +31,7 @@
 <br><br>
 
 <div class="i">
-  <img src="assets/image/stanley-dai-73OZYNjVoNI-unsplash.jpg" style="width:1350px; height: 600px; z-index: 1">
-  <h1>Welcome to Admin page</h1>
-  <h3>You are the king here.</h3>
+  <img src="assets/image/simon-noh-0rmby-3OTeI-unsplash.jpg" style="width:1350px; height: 600px; z-index: 1">
   <div>
     <a href="https://www.instagram.com/spotify/" style="font-size:40px">
       <i id="ss" class="fa fa-instagram"></i>
@@ -46,52 +44,57 @@
     </a>
   </div>
 </div>
-
-<h1 style="text-align: center">I`m KING)</h1>
-<h3 style="text-align: center">USERS</h3>
+<br>
+<h1 style="font-size: 60px; text-align: center">Welcome to Admin page</h1>
+<h3 style="text-align: center">You are the king here.</h3>
+<h3 style="text-align: center">ALL USERS</h3>
 
   <div>
-    <button (click)="create()">Create</button>
+    <button (click)="create()" style="margin-left: 75px">Create</button>
     <div style="margin-left: 75px">
       <div class="search">
         <form [formGroup]="formName">
-          <h3>Search by Music name: </h3>
-          <input type="text" formControlName="name" name="name" (change)="setFilterName()"> &nbsp;&nbsp;&nbsp;
+          <h3>Search by Name: </h3>
+          <input type="text" formControlName="Name" name="Name" (change)="setFilterName()"> &nbsp;&nbsp;&nbsp;
         </form>
       </div>
       <div class="search">
         <form [formGroup]="formAuth">
-          <h3>Search by Author: </h3>
-          <input type="text" formControlName="createDate" name="createDate" (change)="setFilterAuthor()">
+          <h3>Search by Username: </h3>
+          <input type="text" formControlName="userName" name="userName" (change)="setFilterUsername()">
         </form>
       </div>
       <table mat-table [dataSource]="dataTask" class="mat-elevation-z8" width="1200px">
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
-          <th mat-cell *matCellDef="let element"> {{element.id}} </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
-
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Music name </th>
-          <th mat-cell *matCellDef="let element"> {{element.name}} </th>
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
         </ng-container>
 
-
-        <ng-container matColumnDef="createDate">
-          <th mat-header-cell *matHeaderCellDef> Author </th>
-          <th mat-cell *matCellDef="let element"> {{element.createDate}} </th>
+        <ng-container matColumnDef="Surname">
+          <th mat-header-cell *matHeaderCellDef> Surname </th>
+          <td mat-cell *matCellDef="let element"> {{element.Surname}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="userName">
+          <th mat-header-cell *matHeaderCellDef> User Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="importance">
-          <th mat-header-cell *matHeaderCellDef> Year of publisher </th>
-          <th mat-cell *matCellDef="let element">{{element.importance}}</th>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="password">
+          <th mat-header-cell *matHeaderCellDef> Password </th>
+          <td mat-cell *matCellDef="let element"> {{element.password}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> Min </th>
-          <th mat-cell *matCellDef="let element">{{element.status}}</th>
+        <ng-container matColumnDef="nameRole">
+          <th mat-header-cell *matHeaderCellDef> Role </th>
+          <td mat-cell *matCellDef="let element"> {{findRole(element.roleID)}} </td>
         </ng-container>
 
         <ng-container matColumnDef="action">
@@ -140,6 +143,7 @@
   </div>
 
   <div class="c">
+    <a href="admin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Admin</a><br>
     <h5>© 2020 ForMusic</h5>
   </div>
 </footer>

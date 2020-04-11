@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { SupadminRoutingModule } from './supadmin-routing.module';
 import { SadminComponent } from './sadmin/sadmin.component';
 import {MatTableModule} from '@angular/material/table';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DialogboxComponent } from './dialogbox/dialogbox.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -15,8 +17,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     SupadminRoutingModule,
     MatTableModule,
-    ReactiveFormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SupadminModule { }

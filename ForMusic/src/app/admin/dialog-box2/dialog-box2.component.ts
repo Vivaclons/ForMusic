@@ -19,17 +19,17 @@ export class DialogBox2Component implements OnInit {
       this.form = this.formB.group({
         id: [data.id, Validators.required],
         name: [data.name, Validators.required],
-        createDate: [data.createDate, Validators.required],
-        importance: [data.importance, Validators.required],
-        status: [data.status, Validators.required]
+        Author: [data.Author, Validators.required],
+        Year: [data.Year, Validators.required],
+        min: [data.min, Validators.required]
       });
     } else {
       this.new = true;
       this.form = this.formB.group({
         name: ['', Validators.required],
-        createDate: ['', Validators.required],
-        importance: ['', Validators.required],
-        status: ['', Validators.required]
+        Author: ['', Validators.required],
+        Year: ['', Validators.required],
+        min: ['', Validators.required]
       });
     }
   }

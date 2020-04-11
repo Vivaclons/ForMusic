@@ -31,25 +31,17 @@
   margin-left: 1200px;
 }
 
-.i h3{
-  font-size: 30px; /* Specifies the font size of the element */
-  position: absolute; /* Absolute positioning */
-  color: #ffd176;/* text color */
-  top: 435px;
-  margin-left: 500px;
-}
-
 #ss{
 
   position: absolute; /* Absolute positioning */
-  color: #ffd176;/* text color */
+  color: darkred;/* text color */
   top: 500px; /* Position from the top edge */
   margin-left: 580px;
 }
 
 #ss1{
   position: absolute; /* Absolute positioning */
-  color: #ffd176;/* text color */
+  color: darkred;/* text color */
   top: 500px; /* Position from the top edge */
   margin-left: 640px;
 
@@ -58,15 +50,8 @@
 #ss2{
   display: block;
   position: absolute; /* Absolute positioning */
-  color: #ffd176;/* text color */
+  color: darkred;/* text color */
   top: 500px; /* Position from the top edge */
   margin-left: 700px;
 }
 
-.i h1{
-  font-size: 80px; /* Specifies the font size of the element */
-  position: absolute;
-  color: #ffd176;/* text color */
-  top: 345px; /* Position from the top edge */
-  margin-left: 260px;
-}

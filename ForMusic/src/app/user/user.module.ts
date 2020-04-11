@@ -13,10 +13,12 @@ import { FutureComponent } from './future/future.component';
 import { ScaryComponent } from './scary/scary.component';
 import { MemoriesComponent } from './memories/memories.component';
 import { LoveComponent } from './love/love.component';
+import {AdminComponent} from './admin/admin.component';
+import {DialogboxComponent} from './dialogbox/dialogbox.component';
 
 
 @NgModule({
-  declarations: [UserComponent, ManicComponent, FutureComponent, ScaryComponent, MemoriesComponent, LoveComponent],
+  declarations: [UserComponent, ManicComponent, FutureComponent, ScaryComponent, MemoriesComponent, LoveComponent, AdminComponent, DialogboxComponent],
     imports: [
         CommonModule,
         UserRoutingModule,

@@ -23,7 +23,7 @@
       <li><a href="user">Premium</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="main"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="main" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -31,9 +31,7 @@
 <br><br>
 
 <div class="i">
-  <img src="assets/image/stanley-dai-73OZYNjVoNI-unsplash.jpg" style="width:1350px; height: 600px; z-index: 1">
-  <h1>Welcome to Admin page</h1>
-  <h3>You are the king here.</h3>
+  <img src="assets/image/simon-noh-0rmby-3OTeI-unsplash.jpg" style="width:1350px; height: 600px; z-index: 1">
   <div>
     <a href="https://www.instagram.com/spotify/" style="font-size:40px">
       <i id="ss" class="fa fa-instagram"></i>
@@ -46,12 +44,13 @@
     </a>
   </div>
 </div>
-
+<br>
+<h1 style="text-align: center; font-size: 60px;">Welcome to Admin page</h1>
+<h3 style="text-align: center">You are the king here.</h3>
   <h1 style="text-align: center">I`m KING)</h1>
-  <h3 style="text-align: center">USERS</h3>
 <div>
   <h1 style="text-align: center">All Music</h1>
-  <button (click)="create()">Create</button>
+  <button (click)="create()" style="margin-left: 75px">Create</button>
   <div style="margin-left: 75px">
     <div class="search">
       <form [formGroup]="formName">
@@ -62,7 +61,7 @@
     <div class="search">
       <form [formGroup]="formAuth">
         <h3>Search by Author: </h3>
-        <input type="text" formControlName="createDate" name="createDate" (change)="setFilterAuthor()">
+        <input type="text" formControlName="Author" name="Author" (change)="setFilterAuthor()">
       </form>
     </div>
     <table mat-table [dataSource]="dataTask" class="mat-elevation-z8" width="1200px">
@@ -79,19 +78,19 @@
       </ng-container>
 
 
-      <ng-container matColumnDef="createDate">
+      <ng-container matColumnDef="Author">
         <th mat-header-cell *matHeaderCellDef> Author </th>
-        <th mat-cell *matCellDef="let element"> {{element.createDate}} </th>
+        <th mat-cell *matCellDef="let element"> {{element.Author}} </th>
       </ng-container>
 
-      <ng-container matColumnDef="importance">
-        <th mat-header-cell *matHeaderCellDef> Year of publisher </th>
-        <th mat-cell *matCellDef="let element">{{element.importance}}</th>
+      <ng-container matColumnDef="Year">
+        <th mat-header-cell *matHeaderCellDef> Release Year  </th>
+        <th mat-cell *matCellDef="let element">{{element.Year}}</th>
       </ng-container>
 
-      <ng-container matColumnDef="status">
+      <ng-container matColumnDef="min">
         <th mat-header-cell *matHeaderCellDef> Min </th>
-        <th mat-cell *matCellDef="let element">{{element.status}}</th>
+        <th mat-cell *matCellDef="let element">{{element.min}}</th>
       </ng-container>
 
       <ng-container matColumnDef="action">
@@ -141,6 +140,7 @@
   </div>
 
   <div class="c">
+    <a href="supadmin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a>
     <h5>© 2020 ForMusic</h5>
   </div>
 </footer>

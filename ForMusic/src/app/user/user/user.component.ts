@@ -8,6 +8,9 @@ import {MemoriesComponent} from '../memories/memories.component';
 import {ScaryComponent} from '../scary/scary.component';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ProServiceService} from '../../pro-service.service';
+import {AdminComponent} from '../../main/admin/admin.component';
+import {AuthServiceService} from '../../auth-service.service';
+import {DialogboxComponent} from '../dialogbox/dialogbox.component';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -27,20 +30,16 @@ export class UserComponent implements OnInit{
   page = 0;
 
   dataTask = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'name', 'createDate', 'importance', 'status'];
+  displayedColumns: string[] = ['id', 'name', 'Author', 'Year', 'min'];
 
-  constructor(private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth: AuthServiceService, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
-      createDate: ['']
+      Author: ['']
     });
 
     this.formName = this.formI.group({
       name: []
     });
-
-    // this.formName = this.formN.group({
-    //   name: ['']
-    // });
   }
 
   ngOnInit(): void {
@@ -50,7 +49,7 @@ export class UserComponent implements OnInit{
   setFilterAndSort() {
     let str = '_page=' + this.page + '&_limit=' + this.limit;
     if (this.filterAuth !== '' && this.filterAuth !== null && this.filterAuth !== 'none') {
-      str += '&createDate=' + this.filterAuth;
+      str += '&Author=' + this.filterAuth;
     }
     if (this.filterName !== '' && this.filterName !== null) {
       str += '&name=' + this.filterName;
@@ -59,7 +58,7 @@ export class UserComponent implements OnInit{
   }
 
   setFilterAuthor() {
-    this.filterAuth = this.formAuth.getRawValue().createDate;
+    this.filterAuth = this.formAuth.getRawValue().Author;
     this.service.getAllTasks(this.setFilterAndSort()).subscribe( res => {
       this.dataTask = res;
     });
@@ -85,9 +84,13 @@ export class UserComponent implements OnInit{
   }
 
   logout() {
+    this.auth.logout();
   }
 
   adminLog() {
+    this.dialog.open(AdminComponent, {
+      width: '500px'
+    });
   }
 
   manic() {
@@ -117,6 +120,20 @@ export class UserComponent implements OnInit{
   scary() {
     this.dialog.open(ScaryComponent, {
       width: '1000px'
+    });
+  }
+  getUser() {
+    this.service.getAllUsers1(this.setFilterAndSort()).subscribe(res => {
+      this.dataTask = res;
+    });
+  }
+  creat(task: any) {
+    this.dialog.open(DialogboxComponent, {
+      width: '450px',
+      data: task
+    }).afterClosed().subscribe(res => {
+      this.service.updateUser(res).subscribe(result =>
+        this.getUser());
     });
   }
 }

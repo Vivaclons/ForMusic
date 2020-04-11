@@ -23,6 +23,12 @@ export class FirstComponent implements OnInit {
       });
   }
 
+  adminLog() {
+    this.dialog.open(AdminComponent, {
+      width: '500px'
+    });
+  }
+
   getUsers() {
     this.service.getAllUsers().subscribe(res => {
     });

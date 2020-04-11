@@ -4,6 +4,8 @@ import {ProServiceService} from '../../pro-service.service';
 import {DialogBox2Component} from '../dialog-box2/dialog-box2.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MatTableDataSource} from '@angular/material/table';
+import {AuthServiceService} from '../../auth-service.service';
+import {AuthService2Service} from '../../auth-service2.service';
 
 @Component({
   selector: 'app-admin',
@@ -20,20 +22,16 @@ export class AdminComponent implements OnInit {
   page = 0;
 
   dataTask = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'name', 'createDate', 'importance', 'status', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'Author', 'Year', 'min', 'action'];
 
-  constructor(private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
-      createDate: ['']
+      Author: ['']
     });
 
     this.formName = this.formI.group({
       name: []
     });
-
-    // this.formName = this.formN.group({
-    //   name: ['']
-    // });
   }
 
   ngOnInit(): void {
@@ -43,7 +41,7 @@ export class AdminComponent implements OnInit {
   setFilterAndSort() {
     let str = '_page=' + this.page + '&_limit=' + this.limit;
     if (this.filterAuth !== '' && this.filterAuth !== null && this.filterAuth !== 'none') {
-      str += '&createDate=' + this.filterAuth;
+      str += '&Author=' + this.filterAuth;
     }
     if (this.filterName !== '' && this.filterName !== null) {
       str += '&name=' + this.filterName;
@@ -52,7 +50,7 @@ export class AdminComponent implements OnInit {
   }
 
   setFilterAuthor() {
-    this.filterAuth = this.formAuth.getRawValue().createDate;
+    this.filterAuth = this.formAuth.getRawValue().Author;
     this.service.getAllTasks(this.setFilterAndSort()).subscribe( res => {
       this.dataTask = res;
     });
@@ -105,5 +103,9 @@ export class AdminComponent implements OnInit {
         this.getTask();
       });
     });
+  }
+
+  logout() {
+    this.auth.logout();
   }
 }

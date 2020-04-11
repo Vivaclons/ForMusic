@@ -1,21 +1,23 @@
-<form [formGroup]="form">
-  <label for="name">Music:</label>
-  <input type="text" id="name" name="name" formControlName="name">
-  <br>
+<form [formGroup]="formG">
 
-  <label for="importance">Year of publisher:</label>
-  <input type="text" id="importance" name="importance" formControlName="importance">
-  <br>
+  <label for="Name">Name:</label><br>
+  <input id="Name" name="Name" formControlName="Name"><br><br>
 
-  <label for="createDate">Author:</label>
-  <input type="text" id="createDate" name="createDate" formControlName="createDate">
-  <br>
+  <label for="Surname">Surname:</label><br>
+  <input id="Surname" name="Surname" formControlName="Surname"><br><br>
 
-  <label for="status">Min:</label>
-  <input type="text" id="status" name="status" formControlName="status">
-  <br>
+  <label for="username">Username:</label><br>
+  <input id="username" name="userName" formControlName="userName"><br><br>
+
+  <label for="password">Password:</label><br>
+  <input id="password" name="password" formControlName="password"><br><br>
 
   <br>
-  <button *ngIf="new" (click)="create()">create</button>
+  <label for="roleUser">Roles: </label><br>
+  <select id="roleUser" name="roleID" formControlName="roleID">
+    <option *ngFor="let i of roles" [value]="i.id">{{i.nameRole}}</option>
+  </select>
+  <br><br>
+  <button *ngIf="new" (click)="create()">create</button><br>
   <button *ngIf="!new" (click)="update()">update</button>
 </form>

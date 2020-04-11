@@ -7,8 +7,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AuthServiceService {
   private users = [];
-  private admin = [];
-  private isAuthAd = false;
   private isAuth = false;
   constructor(private http: HttpClient, private service: ProServiceService) {
     this.getAllUsers();
@@ -25,19 +23,10 @@ export class AuthServiceService {
       if (this.users[i].userName === userName && this.users[i].password === passWord) {
         this.isAuth = true;
         localStorage.setItem('userName', this.users[i].userName);
+        alert('Success');
+        break;
       } else {
-        alert('ERROR');
-      }
-    }
-  }
-
-  loginAdmin(userName, passWord) {
-    for (let i = 0; i < this.admin.length; i++) {
-      if (this.admin[i].AdminName === userName && this.admin[i].password === passWord) {
-        this.isAuthAd = true;
-        localStorage.setItem('AdminName', this.users[i].AdminName);
-      } else {
-        alert('ERROR');
+        continue;
       }
     }
   }
@@ -52,8 +41,6 @@ export class AuthServiceService {
       setTimeout(() => {
         if (localStorage.getItem('userName')) {
           this.isAuth = true;
-        } else if (localStorage.getItem('AdminName')){
-          this.isAuthAd = true;
         } else {
           this.isAuth = false;
         }

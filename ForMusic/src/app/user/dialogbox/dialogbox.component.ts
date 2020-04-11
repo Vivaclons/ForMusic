@@ -18,27 +18,18 @@ export class DialogboxComponent implements OnInit {
     if (data) {
       this.new = false;
       this.formG = this.formBuilder.group({
-        id: [data.id, Validators.required],
-        Name: [data.Name, Validators.required],
-        Surname: [data.Surname, Validators.required],
         userName: [data.userName, Validators.required],
         password: [data.password, Validators.required],
         roleID: [parseInt(data.roleID, 10), Validators.required]
       });
     } else {
       this.formG = this.formBuilder.group({
-        Name: ['', Validators.required],
-        Surname: ['', Validators.required],
         userName: ['', Validators.required],
         password: ['', Validators.required],
         roleID: ['', Validators.required]
       });
       this.new = true;
     }
-  }
-
-  create() {
-    this.dialog.close(this.formG.getRawValue());
   }
 
   update() {

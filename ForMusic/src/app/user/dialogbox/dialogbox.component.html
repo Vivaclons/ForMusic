@@ -1,11 +1,5 @@
 <form [formGroup]="formG">
 
-  <label for="Name">Name:</label><br>
-  <input id="Name" name="Name" formControlName="Name"><br><br>
-
-  <label for="Surname">Surname:</label><br>
-  <input id="Surname" name="Surname" formControlName="Surname"><br><br>
-
   <label for="username">Username:</label><br>
   <input id="username" name="userName" formControlName="userName"><br><br>
 
@@ -18,5 +12,5 @@
     <option *ngFor="let i of roles" [value]="i.id">{{i.nameRole}}</option>
   </select>
   <br><br>
-  <button *ngIf="new" (click)="create()">create</button><br>
+  <button *ngIf="!new" (click)="update()">update</button>
 </form>
