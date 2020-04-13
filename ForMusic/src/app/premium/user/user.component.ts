@@ -11,6 +11,7 @@ import {ProServiceService} from '../../pro-service.service';
 import {AdminComponent} from '../../main/admin/admin.component';
 import {AuthServiceService} from '../../auth-service.service';
 import {DialogboxComponent} from '../dialogbox/dialogbox.component';
+import {AuthService2Service} from '../../auth-service2.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -22,9 +23,6 @@ export class UserComponent implements OnInit{
 
   formAuth: FormGroup;
   formName: FormGroup;
-  // formName: FormGroup;
-  //
-  // sortName = '';
 
   limit = 3;
   page = 0;
@@ -32,7 +30,7 @@ export class UserComponent implements OnInit{
   dataTask = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'name', 'Author', 'Year', 'min'];
 
-  constructor(private auth: AuthServiceService, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth2: AuthService2Service, private auth: AuthServiceService, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
       Author: ['']
     });
@@ -135,6 +133,9 @@ export class UserComponent implements OnInit{
       this.service.updateUser(res).subscribe(result =>
         this.getUser());
     });
+  }
+  error2() {
+    this.auth2.check();
   }
 }
 

@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
   dataTask = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'name', 'Author', 'Year', 'min', 'action'];
 
-  constructor(private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth2: AuthServiceService, private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
       Author: ['']
     });
@@ -107,5 +107,9 @@ export class AdminComponent implements OnInit {
 
   logout() {
     this.auth.logout();
+  }
+
+  error() {
+    this.auth2.check();
   }
 }

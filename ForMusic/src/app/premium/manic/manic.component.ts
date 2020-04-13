@@ -12,6 +12,8 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 export class ManicComponent implements OnInit {
   displayedColumns: string[] = ['id', 'taskName', 'status'];
   dataSource = new MatTableDataSource<Tasks>(ELEMENT_DATA);
+  // str = 'en';
+  // manic = 'manic';
   @ViewChild(MatSort) sort: MatSort;
   constructor(private dialog: MatDialogRef<ManicComponent>) { }
 
@@ -20,7 +22,13 @@ export class ManicComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
-
+  // tra() {
+  //   if (this.str === 'ru') {
+  //     this.str = 'en';
+  //   } else {
+  //     this.str = 'ru';
+  //   }
+  // }
   back() {
     this.dialog.close();
   }

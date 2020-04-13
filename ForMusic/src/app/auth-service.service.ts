@@ -31,6 +31,11 @@ export class AuthServiceService {
     }
   }
 
+  check() {
+    if (this.isAuth !== true) {
+      alert('You are not authorized as User. Please return back');
+    }
+  }
   logout() {
     this.isAuth = false;
     localStorage.removeItem('userName');

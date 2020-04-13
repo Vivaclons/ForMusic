@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ForMusic';
+  // str = 'en';
+  // manic = 'asdasdads';
+  // tra() {
+  //   if (this.str === 'ru') {
+  //     this.str = 'en';
+  //   } else {
+  //     this.str = 'ru';
+  //   }
+  // }
 }

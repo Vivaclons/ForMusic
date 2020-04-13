@@ -31,7 +31,11 @@ export class AuthService2Service {
       }
     }
   }
-
+  check() {
+    if (this.isAuth !== true) {
+      alert('You are not authorized as Admin. Please return back');
+    }
+  }
   logout() {
     this.isAuth = false;
     localStorage.removeItem('adminName');

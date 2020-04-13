@@ -15,16 +15,16 @@
 <nav class="navbar navbar-inverse" style="display: flex; position: absolute; width: 1350px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="main">ForMusic</a>
+      <a class="navbar-brand" routerLink="/main">ForMusic</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="main">Home</a></li>
+      <li><a routerLink="/main">Home</a></li>
     </ul>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="user">Premium</a></li>
+      <li class="active"><a routerLink="/user">Premium</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="main" (click)="logout()"><span class="glyphicon glyphicon-log-in" (click)="logout()"></span> Logout</a></li>
+      <li><a routerLink="/main" (click)="logout()"><span class="glyphicon glyphicon-log-in" (click)="logout()"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -169,7 +169,7 @@
     </audio>
   </div>
   </a>
-  <a href="main">
+  <a>
     <div class="now">
       <img src="assets/image/G-eazy.jpg" style="width: 300px; height: 200px" (click)="adminLog()">
       <h3>Rap Life</h3>
@@ -273,14 +273,14 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSize]="limit" (page)="changeTableList($event)" [pageSizeOptions]="[3, 5, 7, 10]"> </mat-paginator>
+    <mat-paginator [length]="12" [pageSize]="limit" (page)="changeTableList($event)" [pageSizeOptions]="[3, 5, 7, 10]"> </mat-paginator>
   </div>
 </div>
 
 <br><br>
 
 <footer class="footer">
-  <a href="main" style="color: gray; text-decoration: none">
+  <a routerLink="/main" style="color: gray; text-decoration: none">
     <h3>ForMusic</h3>
   </a>
   <div class="foo">
@@ -308,8 +308,8 @@
   </div>
 
   <div class="c">
-    <a href="admin" style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Admin</a><br>
-    <a href="supadmin" style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a><br>
+    <a routerLink="/admin" (click)="error2()" style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Admin</a><br>
+    <a routerLink="/supadmin" (click)="error2()" style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a><br>
     <a (click)="adminLog()" style="color: gray">If you Admin...</a>
     <h5>© 2020 ForMusic</h5>
   </div>

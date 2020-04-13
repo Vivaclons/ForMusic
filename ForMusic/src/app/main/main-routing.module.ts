@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {FirstComponent} from './first/first.component';
-import {UserComponent} from '../user/user/user.component';
+import {UserComponent} from '../premium/user/user.component';
 import {AuthGuService} from '../auth-gu.service';
 
 

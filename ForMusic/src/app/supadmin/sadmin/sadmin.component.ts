@@ -5,6 +5,7 @@ import {ProServiceService} from '../../pro-service.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogboxComponent} from '../dialogbox/dialogbox.component';
 import {AuthService2Service} from '../../auth-service2.service';
+import {AuthServiceService} from '../../auth-service.service';
 
 @Component({
   selector: 'app-sadmin',
@@ -13,17 +14,15 @@ import {AuthService2Service} from '../../auth-service2.service';
 })
 export class SadminComponent implements OnInit {
   dataTask = new MatTableDataSource();
-  displayedColumns: st
-  ring[] = ['id', 'Name', 'Surname', 'userName', 'password', 'nameRole', 'action'];
+  displayedColumns: string[] = ['id', 'Name', 'Surname', 'userName', 'password', 'nameRole', 'action'];
   filterAuth = '';
   filterName = '';
   formAuth: FormGroup;
   formName: FormGroup;
-  roles = '';
+  roles = [];
   limit = 3;
   page = 0;
-
-  constructor(private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
+  constructor(private auth2: AuthServiceService, private auth: AuthService2Service, private service: ProServiceService, private dialog: MatDialog, private formS: FormBuilder, private formI: FormBuilder, private formN: FormBuilder) {
     this.formAuth = this.formS.group({
       userName: ['']
     });
@@ -62,6 +61,7 @@ export class SadminComponent implements OnInit {
       this.dataTask = res;
     });
   }
+
   changeTableList(event) {
     this.limit = event.pageSize;
     this.service.getAllUsers1(this.setFilterAndSort()).subscribe(res => {
@@ -83,7 +83,7 @@ export class SadminComponent implements OnInit {
 
   findRole(id: number) {
     for (let i = 0; i < this.roles.length; i++) {
-      if (this.roles[i].id == id) {
+      if (this.roles[i].id === id) {
         return this.roles[i].nameRole;
       }
     }
@@ -97,7 +97,6 @@ export class SadminComponent implements OnInit {
     });
   }
 
-  // update
   update(task: any) {
     this.dialog.open(DialogboxComponent, {
       width: '450px',
@@ -117,7 +116,12 @@ export class SadminComponent implements OnInit {
       });
     });
   }
+
   logout() {
     this.auth.logout();
+  }
+
+  error() {
+    this.auth2.check();
   }
 }

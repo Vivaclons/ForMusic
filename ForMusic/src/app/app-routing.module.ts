@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule)},
   {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGu2Service]},
-  {path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuService]},
+  {path: 'user', loadChildren: () => import('./premium/premium.module').then(m => m.PremiumModule), canActivate: [AuthGuService]},
   {path: 'supadmin', loadChildren: () => import('./supadmin/supadmin.module').then(m => m.SupadminModule), canActivate: [AuthGu2Service]}
 ];
 

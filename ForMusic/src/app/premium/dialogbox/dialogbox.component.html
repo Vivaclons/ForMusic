@@ -12,5 +12,5 @@
     <option *ngFor="let i of roles" [value]="i.id">{{i.nameRole}}</option>
   </select>
   <br><br>
-  <button *ngIf="!new" (click)="update()">update</button>
+  <button class="btn btn-success" *ngIf="!new" (click)="update()">update</button>
 </form>

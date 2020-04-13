@@ -14,16 +14,16 @@
 <nav class="navbar navbar-inverse" style="display: flex; position: absolute; width: 1350px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="main">ForMusic</a>
+      <a class="navbar-brand" routerLink="/main">ForMusic</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="main">Home</a></li>
+      <li><a routerLink="/main">Home</a></li>
     </ul>
     <ul class="nav navbar-nav">
-      <li><a href="user">Premium</a></li>
+      <li><a routerLink="/user">Premium</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="main" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a routerLink="/main" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -112,7 +112,7 @@
 <br>
 <br>
 <footer class="footer">
-  <a href="main" style="color: gray; text-decoration: none">
+  <a routerLink="/main" style="color: gray; text-decoration: none">
     <h3>ForMusic</h3>
   </a>
   <div class="foo">
@@ -140,7 +140,7 @@
   </div>
 
   <div class="c">
-    <a href="supadmin"  style="color: gray"><span class="glyphicon glyphicon-log-in" (click)="adminLog()"></span> Super Admin</a>
+    <a routerLink="/supadmin"  style="color: gray"><span class="glyphicon glyphicon-log-in" ></span> Super Admin</a>
     <h5>© 2020 ForMusic</h5>
   </div>
 </footer>

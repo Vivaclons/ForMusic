@@ -4,6 +4,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {ProServiceService} from '../../pro-service.service';
 import {SignupComponent} from '../signup/signup.component';
 import { AdminComponent } from '../admin/admin.component';
+import {AuthServiceService} from '../../auth-service.service';
+import {AuthService2Service} from '../../auth-service2.service';
 
 @Component({
   selector: 'app-first',
@@ -11,7 +13,7 @@ import { AdminComponent } from '../admin/admin.component';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent implements OnInit {
-  constructor(private dialog: MatDialog, private service: ProServiceService) {}
+  constructor(private dialog: MatDialog, private service: ProServiceService, private auth: AuthServiceService, private auth2: AuthService2Service) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -48,5 +50,13 @@ export class FirstComponent implements OnInit {
     this.dialog.open(AdminComponent, {
       width: '500px'
     });
+  }
+
+  error() {
+    this.auth.check();
+  }
+
+  error2() {
+    this.auth2.check();
   }
 }
